@@ -505,14 +505,14 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <script>
 (function () {
-  var P = [["Raval d'Amàlia", 41.5586737, 2.1187898], ["Pujada de la Salut", 41.5577701, 2.1184069], ["Molí d'en Torrella", 41.555485, 2.115761], ["Cases d'en Sanges", 41.554983, 2.116788]];
+  var P = [["Raval d'Amàlia", 41.5586737, 2.1187898], ["Pujada de la Salut", 41.5577701, 2.1184069], ["Molí d'en Torrella", 41.555485, 2.115761, "left"], ["Cases d'en Sanges", 41.554983, 2.116788, "right"]];
   var B = P.map(function (p) { return [p[1], p[2]]; });
   var maps = {};
   function init(id) {
     var el = document.getElementById(id); if (!el || !window.L) return;
     var m = L.map(el, { scrollWheelZoom: false });
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 19, attribution: "&copy; OpenStreetMap" }).addTo(m);
-    P.forEach(function (p) { L.circleMarker([p[1], p[2]], { radius: 9, color: "#111", weight: 2, fillColor: "#a3363a", fillOpacity: 0.95 }).addTo(m).bindTooltip(p[0], { permanent: true, direction: "top", offset: [0, -8], className: "barri-tip" }); });
+    P.forEach(function (p) { L.circleMarker([p[1], p[2]], { radius: 9, color: "#111", weight: 2, fillColor: "#a3363a", fillOpacity: 0.95 }).addTo(m).bindTooltip(p[0], { permanent: true, direction: p[3] || "top", offset: p[3] === "left" ? [-8, 0] : p[3] === "right" ? [8, 0] : [0, -8], className: "barri-tip" }); });
     m.fitBounds(B, { padding: [40, 40] }); maps[id] = m;
   }
   function refresh() { Object.keys(maps).forEach(function (k) { var el = document.getElementById(k); if (el && el.offsetParent !== null) { maps[k].invalidateSize(); maps[k].fitBounds(B, { padding: [40, 40] }); } }); }
