@@ -4,15 +4,30 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Carretera de Caldes i pont de la Salut</title>
+<meta name="description" content="Portal informatiu de veïns: notícies publicades, posicions i enllaços sobre la carretera de Caldes i el pont de la Salut (Sabadell). En català i castellà.">
+<meta name="theme-color" content="#1d2a38">
+<link rel="canonical" href="https://pontdelasalut.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%231d2a38%22%2F%3E%3Cpath%20d%3D%22M8%2044%20Q32%2014%2056%2044%22%20fill%3D%22none%22%20stroke%3D%22%23f2b632%22%20stroke-width%3D%226%22%2F%3E%3Crect%20x%3D%226%22%20y%3D%2244%22%20width%3D%2252%22%20height%3D%226%22%20fill%3D%22%23b9c0c9%22%2F%3E%3C%2Fsvg%3E">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pontdelasalut.github.io/">
+<meta property="og:title" content="Carretera de Caldes i pont de la Salut">
+<meta property="og:description" content="Notícies publicades i posicions de cada part. Portal informatiu de veïns · Noticias y posiciones, en catalán y castellano.">
+<meta property="og:image" content="https://pontdelasalut.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ca_ES">
+<meta property="og:locale:alternate" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
 <style>
   :root { --ink:#1d2430; --muted:#5b6575; --line:#dfe4ec; --bg:#f5f6f8; --card:#ffffff; --accent:#1f5f8b; --accent-2:#e8f1f8; }
   * { box-sizing:border-box; }
   body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color:var(--ink); background:var(--bg); line-height:1.55; }
+  a:focus-visible, button:focus-visible { outline:3px solid #f2b632; outline-offset:2px; }
   header.hero { background:#1d2a38; color:#fff; }
   .hero-inner { max-width:960px; margin:0 auto; padding:28px 20px 0; }
   .topbar { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
   .lang { display:inline-flex; border:1px solid rgba(255,255,255,.5); border-radius:999px; overflow:hidden; }
-  .lang button { background:transparent; color:#fff; border:0; padding:6px 14px; font:inherit; cursor:pointer; }
+  .lang button { background:transparent; color:#fff; border:0; padding:8px 16px; font:inherit; cursor:pointer; }
   .lang button[aria-pressed="true"] { background:#fff; color:#1d2a38; font-weight:600; }
   .hero h1 { font-size:clamp(1.6rem, 4vw, 2.4rem); margin:18px 0 6px; line-height:1.2; }
   .hero p.sub { margin:0 0 18px; color:#c9d6e3; max-width:720px; }
@@ -23,21 +38,27 @@
   .panel { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px; }
   .positions { display:grid; gap:14px; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); }
   .positions h3 { margin:0 0 6px; font-size:1rem; color:var(--accent); }
-  .positions p { margin:0; color:var(--ink); }
+  .positions p { margin:0; }
   .news { display:grid; gap:14px; }
   .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 20px; display:flex; flex-direction:column; gap:6px; }
   .meta { font-size:.85rem; color:var(--muted); }
   .badge { display:inline-block; background:var(--accent-2); color:var(--accent); padding:2px 10px; border-radius:999px; font-size:.8rem; font-weight:600; margin-right:6px; }
   .card h3 { margin:4px 0 2px; font-size:1.08rem; line-height:1.35; }
-  .card p { margin:0; color:var(--ink); }
-  .btn { align-self:flex-start; margin-top:6px; display:inline-block; background:var(--accent); color:#fff !important; text-decoration:none; padding:9px 16px; border-radius:10px; font-weight:600; font-size:.95rem; }
+  .card p { margin:0; }
+  .thumb { width:100%; height:auto; border-radius:10px; display:block; margin:6px 0 4px; }
+  .btn { align-self:flex-start; margin-top:6px; display:inline-block; background:var(--accent); color:#fff !important; text-decoration:none; padding:10px 16px; border-radius:10px; font-weight:600; font-size:.95rem; border:0; font-family:inherit; cursor:pointer; }
   .btn:hover { filter:brightness(1.08); }
+  .btn.wa { background:#1f8f4e; }
+  .btn.ghost { background:#fff; color:var(--accent) !important; border:1px solid var(--accent); }
+  .share-row { display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+  .share-row .btn { margin-top:0; }
+  .url { color:var(--muted); font-size:.9rem; }
+  .about p { margin:0; color:var(--muted); }
   .links { display:grid; gap:10px; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); }
   .links a { display:block; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 14px; color:var(--accent); text-decoration:none; font-weight:600; }
   .links a span { display:block; font-weight:400; color:var(--muted); font-size:.85rem; }
   footer { max-width:960px; margin:0 auto; padding:0 20px 36px; color:var(--muted); font-size:.85rem; }
   .hidden { display:none !important; }
-  .thumb { width:100%; height:auto; border-radius:10px; display:block; margin:6px 0 4px; }
 </style>
 </head>
 <body>
@@ -45,13 +66,12 @@
 <header class="hero">
   <div class="hero-inner">
     <div class="topbar">
-      <span class="meta" style="color:#c9d6e3">Portal informatiu</span>
+      <span class="meta" style="color:#c9d6e3">Portal informatiu · Portal informativo</span>
       <div class="lang" role="group" aria-label="Idioma">
         <button type="button" data-set-lang="ca" aria-pressed="true">Català</button>
         <button type="button" data-set-lang="es" aria-pressed="false">Castellano</button>
       </div>
     </div>
-
     <div data-lang="ca">
       <h1>Carretera de Caldes i pont de la Salut</h1>
       <p class="sub">Notícies publicades, posicions de cada part i enllaços per seguir la informació.</p>
@@ -60,43 +80,20 @@
       <h1>Carretera de Caldes y puente de la Salud</h1>
       <p class="sub">Noticias publicadas, posiciones de cada parte y enlaces para seguir la información.</p>
     </div>
-
     <svg viewBox="0 0 960 260" role="img" aria-label="Ilustración de una calle con acera estrecha y parada de autobús">
-      <defs>
-        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#3b5b78"/><stop offset="1" stop-color="#8fb3cc"/>
-        </linearGradient>
-      </defs>
+      <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b5b78"/><stop offset="1" stop-color="#8fb3cc"/></linearGradient></defs>
       <rect width="960" height="260" fill="url(#sky)"/>
-      <rect x="40" y="70" width="150" height="120" fill="#2b3e52"/>
-      <rect x="210" y="95" width="120" height="95" fill="#34495e"/>
-      <rect x="650" y="60" width="180" height="130" fill="#2b3e52"/>
-      <g fill="#f3d37a" opacity=".85">
-        <rect x="60" y="95" width="22" height="26"/><rect x="100" y="95" width="22" height="26"/><rect x="140" y="95" width="22" height="26"/>
-        <rect x="60" y="135" width="22" height="26"/><rect x="140" y="135" width="22" height="26"/>
-        <rect x="230" y="115" width="20" height="24"/><rect x="265" y="115" width="20" height="24"/>
-        <rect x="670" y="85" width="22" height="26"/><rect x="710" y="85" width="22" height="26"/><rect x="790" y="85" width="22" height="26"/>
-      </g>
-      <rect x="0" y="196" width="960" height="18" fill="#b9c0c9"/>
-      <rect x="0" y="214" width="960" height="4" fill="#8b929c"/>
-      <rect x="0" y="218" width="960" height="42" fill="#4a4f57"/>
-      <g fill="#e9e3c4">
-        <rect x="30" y="236" width="70" height="5"/><rect x="170" y="236" width="70" height="5"/><rect x="310" y="236" width="70" height="5"/><rect x="450" y="236" width="70" height="5"/><rect x="590" y="236" width="70" height="5"/><rect x="730" y="236" width="70" height="5"/><rect x="870" y="236" width="70" height="5"/>
-      </g>
-      <rect x="520" y="150" width="8" height="66" fill="#d9dee5"/>
-      <rect x="590" y="150" width="8" height="66" fill="#d9dee5"/>
-      <rect x="512" y="140" width="96" height="14" rx="3" fill="#f2b632"/>
-      <rect x="520" y="164" width="78" height="30" fill="#f7f9fb" opacity=".9"/>
-      <text x="559" y="184" font-size="14" text-anchor="middle" fill="#1d2a38" font-family="system-ui, Arial">BUS</text>
-      <rect x="330" y="160" width="6" height="56" fill="#d9dee5"/>
-      <rect x="320" y="150" width="26" height="18" rx="3" fill="#c0392b"/>
-      <text x="333" y="164" font-size="12" text-anchor="middle" fill="#fff" font-family="system-ui, Arial">!</text>
+      <rect x="40" y="70" width="150" height="120" fill="#2b3e52"/><rect x="210" y="95" width="120" height="95" fill="#34495e"/><rect x="650" y="60" width="180" height="130" fill="#2b3e52"/>
+      <g fill="#f3d37a" opacity=".85"><rect x="60" y="95" width="22" height="26"/><rect x="100" y="95" width="22" height="26"/><rect x="140" y="95" width="22" height="26"/><rect x="60" y="135" width="22" height="26"/><rect x="140" y="135" width="22" height="26"/><rect x="230" y="115" width="20" height="24"/><rect x="265" y="115" width="20" height="24"/><rect x="670" y="85" width="22" height="26"/><rect x="710" y="85" width="22" height="26"/><rect x="790" y="85" width="22" height="26"/></g>
+      <rect x="0" y="196" width="960" height="18" fill="#b9c0c9"/><rect x="0" y="214" width="960" height="4" fill="#8b929c"/><rect x="0" y="218" width="960" height="42" fill="#4a4f57"/>
+      <g fill="#e9e3c4"><rect x="30" y="236" width="70" height="5"/><rect x="170" y="236" width="70" height="5"/><rect x="310" y="236" width="70" height="5"/><rect x="450" y="236" width="70" height="5"/><rect x="590" y="236" width="70" height="5"/><rect x="730" y="236" width="70" height="5"/><rect x="870" y="236" width="70" height="5"/></g>
+      <rect x="520" y="150" width="8" height="66" fill="#d9dee5"/><rect x="590" y="150" width="8" height="66" fill="#d9dee5"/><rect x="512" y="140" width="96" height="14" rx="3" fill="#f2b632"/><rect x="520" y="164" width="78" height="30" fill="#f7f9fb" opacity=".9"/><text x="559" y="184" font-size="14" text-anchor="middle" fill="#1d2a38" font-family="system-ui, Arial">BUS</text>
+      <rect x="330" y="160" width="6" height="56" fill="#d9dee5"/><rect x="320" y="150" width="26" height="18" rx="3" fill="#c0392b"/><text x="333" y="164" font-size="12" text-anchor="middle" fill="#fff" font-family="system-ui, Arial">!</text>
     </svg>
   </div>
 </header>
 
 <main>
-
   <div data-lang="ca">
     <section>
       <div class="panel">
@@ -108,18 +105,9 @@
     <section>
       <h2>Posicions</h2>
       <div class="positions">
-        <div class="panel">
-          <h3>Veïns</h3>
-          <p>Reclamen accessibilitat, voreres i transport públic, i asseguren que la situació fa anys que s'arrossega.</p>
-        </div>
-        <div class="panel">
-          <h3>Ajuntament</h3>
-          <p>Afirma que el projecte de la zona està gairebé acabat i que hi ha 700.000 € previstos al pressupost de l'any vinent. Avisa que la seva execució podria endarrerir-se fins al 2027.</p>
-        </div>
-        <div class="panel">
-          <h3>Titularitat de la carretera</h3>
-          <p>La carretera de Caldes és de la Generalitat, segons la informació publicada.</p>
-        </div>
+        <div class="panel"><h3>Veïns</h3><p>Reclamen accessibilitat, voreres i transport públic, i asseguren que la situació fa anys que s'arrossega.</p></div>
+        <div class="panel"><h3>Ajuntament</h3><p>Afirma que el projecte de la zona està gairebé acabat i que hi ha 700.000 € previstos al pressupost de l'any vinent. Avisa que la seva execució podria endarrerir-se fins al 2027.</p></div>
+        <div class="panel"><h3>Titularitat de la carretera</h3><p>La carretera de Caldes és de la Generalitat, segons la informació publicada.</p></div>
       </div>
     </section>
 
@@ -131,35 +119,35 @@
           <h3>Veïns de la carretera de Caldes tallen el trànsit per reclamar voreres i autobús</h3>
           <svg class="thumb" viewBox="0 0 320 120" role="img" aria-label="Calzada cortada con conos y parada de autobús"><rect width="320" height="120" fill="#8fb3cc"/><rect y="70" width="320" height="8" fill="#b9c0c9"/><rect y="78" width="320" height="42" fill="#4a4f57"/><g fill="#f08c2e"><polygon points="60,78 72,56 84,78"/><polygon points="150,78 162,56 174,78"/><polygon points="240,78 252,56 264,78"/></g><rect x="200" y="30" width="5" height="40" fill="#d9dee5"/><rect x="186" y="22" width="40" height="12" rx="2" fill="#f2b632"/></svg>
           <p>Van tallar el trànsit una hora el diumenge 1 de novembre. L'Ajuntament diu que el projecte de la zona és quasi acabat.</p>
-          <a class="btn" href="https://www.diaridesabadell.com/sabadell/veins-carretera-de-caldes-tallen-el-transit-voreres-autobus-mobilitat-accessibilitat-sabadell.html" target="_blank" rel="noopener">Llegir la notícia</a>
+          <a class="btn" href="https://www.diaridesabadell.com/sabadell/veins-carretera-de-caldes-tallen-el-transit-voreres-autobus-mobilitat-accessibilitat-sabadell.html" target="_blank" rel="noopener">Llegir la notícia ↗</a>
         </article>
         <article class="card">
           <div class="meta"><span class="badge">Diari de Sabadell</span>2 de novembre de 2026</div>
           <h3>Veïns del Raval d'Amàlia diuen prou</h3>
-          <svg class="thumb" viewBox="0 0 320 120" role="img" aria-label="Conjunto de casas en una colina con la carretera interrumpida"><rect width="320" height="120" fill="#8fb3cc"/><rect x="30" y="50" width="60" height="50" fill="#2b3e52"/><polygon points="25,50 60,25 95,50" fill="#1d2a38"/><rect x="110" y="40" width="50" height="60" fill="#34495e"/><rect x="180" y="55" width="55" height="45" fill="#2b3e52"/><polygon points="175,55 207,32 240,55" fill="#1d2a38"/><rect y="100" width="320" height="20" fill="#4a4f57"/><rect x="240" y="92" width="60" height="6" fill="#c0392b"/></svg>
+          <svg class="thumb" viewBox="0 0 320 120" role="img" aria-label="Casas en una colina con la carretera interrumpida"><rect width="320" height="120" fill="#8fb3cc"/><rect x="30" y="50" width="60" height="50" fill="#2b3e52"/><polygon points="25,50 60,25 95,50" fill="#1d2a38"/><rect x="110" y="40" width="50" height="60" fill="#34495e"/><rect x="180" y="55" width="55" height="45" fill="#2b3e52"/><polygon points="175,55 207,32 240,55" fill="#1d2a38"/><rect y="100" width="320" height="20" fill="#4a4f57"/><rect x="240" y="92" width="60" height="6" fill="#c0392b"/></svg>
           <p>Diuen estar aïllats des de fa més de 15 anys. Anuncien una associació de veïns i protestes periòdiques.</p>
-          <a class="btn" href="https://www.diaridesabadell.com/sabadell/aillament-ravalamalia-mancances-sabadell.html" target="_blank" rel="noopener">Llegir la notícia</a>
+          <a class="btn" href="https://www.diaridesabadell.com/sabadell/aillament-ravalamalia-mancances-sabadell.html" target="_blank" rel="noopener">Llegir la notícia ↗</a>
         </article>
         <article class="card">
           <div class="meta"><span class="badge">Ràdio Sabadell</span>2 de novembre de 2026</div>
           <h3>Tallen el pont de la Salut per exigir millores a l'espai públic</h3>
           <svg class="thumb" viewBox="0 0 320 120" role="img" aria-label="Puente sobre el río"><rect width="320" height="120" fill="#8fb3cc"/><rect y="72" width="320" height="48" fill="#3f7fa6"/><rect y="50" width="320" height="10" fill="#b9c0c9"/><path d="M30 72 Q160 12 290 72" fill="none" stroke="#5b6575" stroke-width="10"/><rect x="60" y="44" width="8" height="28" fill="#8b929c"/><rect x="156" y="36" width="8" height="36" fill="#8b929c"/><rect x="252" y="44" width="8" height="28" fill="#8b929c"/></svg>
           <p>Exigeixen voreres més segures, més transport públic i més accessibilitat. L'Ajuntament avisa que el projecte de 700.000 € es podria endarrerir fins al 2027.</p>
-          <a class="btn" href="https://radiosabadell.fm/actualitat/societat/tallen-pont-salut-exigir-millores-espai-public" target="_blank" rel="noopener">Llegir la notícia</a>
+          <a class="btn" href="https://radiosabadell.fm/actualitat/societat/tallen-pont-salut-exigir-millores-espai-public" target="_blank" rel="noopener">Llegir la notícia ↗</a>
         </article>
         <article class="card">
           <div class="meta"><span class="badge">iSabadell</span>25 de març de 2025</div>
           <h3>Acord per «dignificar» l'entorn de la carretera de Caldes</h3>
-          <svg class="thumb" viewBox="0 0 320 120" role="img" aria-label="Documento aprobado con marca de verificación"><rect width="320" height="120" fill="#e8f1f8"/><rect x="110" y="16" width="100" height="88" rx="6" fill="#fff" stroke="#1f5f8b" stroke-width="2"/><g stroke="#8fb3cc" stroke-width="4"><line x1="128" y1="42" x2="192" y2="42"/><line x1="128" y1="58" x2="192" y2="58"/><line x1="128" y1="74" x2="180" y2="74"/></g><circle cx="230" cy="80" r="20" fill="#2e8b57"/><polyline points="220,80 228,88 242,72" fill="none" stroke="#fff" stroke-width="4"/></svg>
+          <svg class="thumb" viewBox="0 0 320 120" role="img" aria-label="Documento aprobado"><rect width="320" height="120" fill="#e8f1f8"/><rect x="110" y="16" width="100" height="88" rx="6" fill="#fff" stroke="#1f5f8b" stroke-width="2"/><g stroke="#8fb3cc" stroke-width="4"><line x1="128" y1="42" x2="192" y2="42"/><line x1="128" y1="58" x2="192" y2="58"/><line x1="128" y1="74" x2="180" y2="74"/></g><circle cx="230" cy="80" r="20" fill="#2e8b57"/><polyline points="220,80 228,88 242,72" fill="none" stroke="#fff" stroke-width="4"/></svg>
           <p>El ple municipal va aprovar per unanimitat una moció d'ERC per elaborar un pla de 12 mesos per a la zona.</p>
-          <a class="btn" href="https://www.isabadell.cat/politica/ple-municipal/carretera-de-caldes-294916/" target="_blank" rel="noopener">Llegir la notícia</a>
+          <a class="btn" href="https://www.isabadell.cat/politica/ple-municipal/carretera-de-caldes-294916/" target="_blank" rel="noopener">Llegir la notícia ↗</a>
         </article>
         <article class="card">
           <div class="meta"><span class="badge">Diari de Sabadell</span>15 de setembre de 2023</div>
           <h3>Article publicat el 15 de setembre de 2023</h3>
           <svg class="thumb" viewBox="0 0 320 120" role="img" aria-label="Periódico de archivo"><rect width="320" height="120" fill="#eef1f5"/><rect x="100" y="14" width="120" height="92" fill="#fff" stroke="#5b6575" stroke-width="2"/><rect x="112" y="26" width="96" height="14" fill="#5b6575"/><g fill="#b9c0c9"><rect x="112" y="50" width="96" height="6"/><rect x="112" y="62" width="96" height="6"/><rect x="112" y="74" width="70" height="6"/><rect x="112" y="86" width="84" height="6"/></g></svg>
           <p>Enllaç a l'article d'arxiu sobre les queixes dels veïns.</p>
-          <a class="btn" href="https://www.diaridesabadell.com/2023/09/15/queixes-veins-moli-torrella-sabadell/" target="_blank" rel="noopener">Llegir la notícia</a>
+          <a class="btn" href="https://www.diaridesabadell.com/2023/09/15/queixes-veins-moli-torrella-sabadell/" target="_blank" rel="noopener">Llegir la notícia ↗</a>
         </article>
       </div>
     </section>
@@ -171,6 +159,24 @@
         <a href="https://www.instagram.com/p/DezWbQ-jpia/" target="_blank" rel="noopener">Instagram<span>Publicació</span></a>
         <a href="https://www.youtube.com/watch?v=0XFH6bOra3g" target="_blank" rel="noopener">YouTube<span>Vídeo</span></a>
         <a href="https://www.tiktok.com/@jess.antonio0362/video/7703174007050210583" target="_blank" rel="noopener">TikTok<span>Vídeo</span></a>
+      </div>
+    </section>
+
+    <section>
+      <div class="panel share">
+        <h2>Comparteix aquesta pàgina</h2>
+        <div class="share-row">
+          <a class="btn wa" href="https://wa.me/?text=Carretera%20de%20Caldes%20i%20pont%20de%20la%20Salut%3A%20https%3A%2F%2Fpontdelasalut.github.io%2F" target="_blank" rel="noopener">Enviar per WhatsApp</a>
+          <button type="button" class="btn ghost" data-copy data-copied="Enllaç copiat">Copiar l'enllaç</button>
+          <span class="url">pontdelasalut.github.io</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="panel about">
+        <h2>Qui som</h2>
+        <p>Iniciativa informativa de veïns. No és una web oficial de l'Ajuntament ni de cap entitat registrada. Els enllaços porten a webs externes i el contingut de cada notícia és responsabilitat del mitjà que la publica.</p>
       </div>
     </section>
   </div>
@@ -186,18 +192,9 @@
     <section>
       <h2>Posiciones</h2>
       <div class="positions">
-        <div class="panel">
-          <h3>Vecinos</h3>
-          <p>Reclaman accesibilidad, aceras y transporte público, y dicen que la situación lleva años sin resolverse.</p>
-        </div>
-        <div class="panel">
-          <h3>Ayuntamiento</h3>
-          <p>Afirma que el proyecto de la zona está casi terminado y que hay 700.000 € previstos en el presupuesto del año siguiente. Advierte de que su ejecución podría retrasarse hasta 2027.</p>
-        </div>
-        <div class="panel">
-          <h3>Titularidad de la carretera</h3>
-          <p>La carretera de Caldes es de la Generalitat, según la información publicada.</p>
-        </div>
+        <div class="panel"><h3>Vecinos</h3><p>Reclaman accesibilidad, aceras y transporte público, y dicen que la situación lleva años sin resolverse.</p></div>
+        <div class="panel"><h3>Ayuntamiento</h3><p>Afirma que el proyecto de la zona está casi terminado y que hay 700.000 € previstos en el presupuesto del año siguiente. Advierte de que su ejecución podría retrasarse hasta 2027.</p></div>
+        <div class="panel"><h3>Titularidad de la carretera</h3><p>La carretera de Caldes es de la Generalitat, según la información publicada.</p></div>
       </div>
     </section>
 
@@ -209,35 +206,35 @@
           <h3>Vecinos de la carretera de Caldes cortan el tráfico para reclamar aceras y autobús</h3>
           <svg class="thumb" viewBox="0 0 320 120" role="img" aria-label="Calzada cortada con conos y parada de autobús"><rect width="320" height="120" fill="#8fb3cc"/><rect y="70" width="320" height="8" fill="#b9c0c9"/><rect y="78" width="320" height="42" fill="#4a4f57"/><g fill="#f08c2e"><polygon points="60,78 72,56 84,78"/><polygon points="150,78 162,56 174,78"/><polygon points="240,78 252,56 264,78"/></g><rect x="200" y="30" width="5" height="40" fill="#d9dee5"/><rect x="186" y="22" width="40" height="12" rx="2" fill="#f2b632"/></svg>
           <p>Cortaron el tráfico una hora el domingo 1 de noviembre. El Ayuntamiento dice que el proyecto de la zona está casi terminado.</p>
-          <a class="btn" href="https://www.diaridesabadell.com/sabadell/veins-carretera-de-caldes-tallen-el-transit-voreres-autobus-mobilitat-accessibilitat-sabadell.html" target="_blank" rel="noopener">Leer la noticia</a>
+          <a class="btn" href="https://www.diaridesabadell.com/sabadell/veins-carretera-de-caldes-tallen-el-transit-voreres-autobus-mobilitat-accessibilitat-sabadell.html" target="_blank" rel="noopener">Leer la noticia ↗</a>
         </article>
         <article class="card">
           <div class="meta"><span class="badge">Diari de Sabadell</span>2 de noviembre de 2026</div>
           <h3>Vecinos del Raval d'Amàlia dicen basta</h3>
-          <svg class="thumb" viewBox="0 0 320 120" role="img" aria-label="Conjunto de casas en una colina con la carretera interrumpida"><rect width="320" height="120" fill="#8fb3cc"/><rect x="30" y="50" width="60" height="50" fill="#2b3e52"/><polygon points="25,50 60,25 95,50" fill="#1d2a38"/><rect x="110" y="40" width="50" height="60" fill="#34495e"/><rect x="180" y="55" width="55" height="45" fill="#2b3e52"/><polygon points="175,55 207,32 240,55" fill="#1d2a38"/><rect y="100" width="320" height="20" fill="#4a4f57"/><rect x="240" y="92" width="60" height="6" fill="#c0392b"/></svg>
+          <svg class="thumb" viewBox="0 0 320 120" role="img" aria-label="Casas en una colina con la carretera interrumpida"><rect width="320" height="120" fill="#8fb3cc"/><rect x="30" y="50" width="60" height="50" fill="#2b3e52"/><polygon points="25,50 60,25 95,50" fill="#1d2a38"/><rect x="110" y="40" width="50" height="60" fill="#34495e"/><rect x="180" y="55" width="55" height="45" fill="#2b3e52"/><polygon points="175,55 207,32 240,55" fill="#1d2a38"/><rect y="100" width="320" height="20" fill="#4a4f57"/><rect x="240" y="92" width="60" height="6" fill="#c0392b"/></svg>
           <p>Dicen llevar más de 15 años aislados. Anuncian una asociación de vecinos y protestas periódicas.</p>
-          <a class="btn" href="https://www.diaridesabadell.com/sabadell/aillament-ravalamalia-mancances-sabadell.html" target="_blank" rel="noopener">Leer la noticia</a>
+          <a class="btn" href="https://www.diaridesabadell.com/sabadell/aillament-ravalamalia-mancances-sabadell.html" target="_blank" rel="noopener">Leer la noticia ↗</a>
         </article>
         <article class="card">
           <div class="meta"><span class="badge">Ràdio Sabadell</span>2 de noviembre de 2026</div>
           <h3>Cortan el puente de la Salud para exigir mejoras en el espacio público</h3>
           <svg class="thumb" viewBox="0 0 320 120" role="img" aria-label="Puente sobre el río"><rect width="320" height="120" fill="#8fb3cc"/><rect y="72" width="320" height="48" fill="#3f7fa6"/><rect y="50" width="320" height="10" fill="#b9c0c9"/><path d="M30 72 Q160 12 290 72" fill="none" stroke="#5b6575" stroke-width="10"/><rect x="60" y="44" width="8" height="28" fill="#8b929c"/><rect x="156" y="36" width="8" height="36" fill="#8b929c"/><rect x="252" y="44" width="8" height="28" fill="#8b929c"/></svg>
           <p>Exigen aceras más seguras, más transporte público y más accesibilidad. El Ayuntamiento advierte de que el proyecto de 700.000 € podría retrasarse hasta 2027.</p>
-          <a class="btn" href="https://radiosabadell.fm/actualitat/societat/tallen-pont-salut-exigir-millores-espai-public" target="_blank" rel="noopener">Leer la noticia</a>
+          <a class="btn" href="https://radiosabadell.fm/actualitat/societat/tallen-pont-salut-exigir-millores-espai-public" target="_blank" rel="noopener">Leer la noticia ↗</a>
         </article>
         <article class="card">
           <div class="meta"><span class="badge">iSabadell</span>25 de marzo de 2025</div>
           <h3>Acuerdo para «dignificar» el entorno de la carretera de Caldes</h3>
-          <svg class="thumb" viewBox="0 0 320 120" role="img" aria-label="Documento aprobado con marca de verificación"><rect width="320" height="120" fill="#e8f1f8"/><rect x="110" y="16" width="100" height="88" rx="6" fill="#fff" stroke="#1f5f8b" stroke-width="2"/><g stroke="#8fb3cc" stroke-width="4"><line x1="128" y1="42" x2="192" y2="42"/><line x1="128" y1="58" x2="192" y2="58"/><line x1="128" y1="74" x2="180" y2="74"/></g><circle cx="230" cy="80" r="20" fill="#2e8b57"/><polyline points="220,80 228,88 242,72" fill="none" stroke="#fff" stroke-width="4"/></svg>
+          <svg class="thumb" viewBox="0 0 320 120" role="img" aria-label="Documento aprobado"><rect width="320" height="120" fill="#e8f1f8"/><rect x="110" y="16" width="100" height="88" rx="6" fill="#fff" stroke="#1f5f8b" stroke-width="2"/><g stroke="#8fb3cc" stroke-width="4"><line x1="128" y1="42" x2="192" y2="42"/><line x1="128" y1="58" x2="192" y2="58"/><line x1="128" y1="74" x2="180" y2="74"/></g><circle cx="230" cy="80" r="20" fill="#2e8b57"/><polyline points="220,80 228,88 242,72" fill="none" stroke="#fff" stroke-width="4"/></svg>
           <p>El pleno municipal aprobó por unanimidad una moción de ERC para elaborar un plan de 12 meses para la zona.</p>
-          <a class="btn" href="https://www.isabadell.cat/politica/ple-municipal/carretera-de-caldes-294916/" target="_blank" rel="noopener">Leer la noticia</a>
+          <a class="btn" href="https://www.isabadell.cat/politica/ple-municipal/carretera-de-caldes-294916/" target="_blank" rel="noopener">Leer la noticia ↗</a>
         </article>
         <article class="card">
           <div class="meta"><span class="badge">Diari de Sabadell</span>15 de septiembre de 2023</div>
           <h3>Artículo publicado el 15 de septiembre de 2023</h3>
           <svg class="thumb" viewBox="0 0 320 120" role="img" aria-label="Periódico de archivo"><rect width="320" height="120" fill="#eef1f5"/><rect x="100" y="14" width="120" height="92" fill="#fff" stroke="#5b6575" stroke-width="2"/><rect x="112" y="26" width="96" height="14" fill="#5b6575"/><g fill="#b9c0c9"><rect x="112" y="50" width="96" height="6"/><rect x="112" y="62" width="96" height="6"/><rect x="112" y="74" width="70" height="6"/><rect x="112" y="86" width="84" height="6"/></g></svg>
           <p>Enlace al artículo de archivo sobre las quejas de los vecinos.</p>
-          <a class="btn" href="https://www.diaridesabadell.com/2023/09/15/queixes-veins-moli-torrella-sabadell/" target="_blank" rel="noopener">Leer la noticia</a>
+          <a class="btn" href="https://www.diaridesabadell.com/2023/09/15/queixes-veins-moli-torrella-sabadell/" target="_blank" rel="noopener">Leer la noticia ↗</a>
         </article>
       </div>
     </section>
@@ -251,38 +248,67 @@
         <a href="https://www.tiktok.com/@jess.antonio0362/video/7703174007050210583" target="_blank" rel="noopener">TikTok<span>Vídeo</span></a>
       </div>
     </section>
-  </div>
 
+    <section>
+      <div class="panel share">
+        <h2>Comparte esta página</h2>
+        <div class="share-row">
+          <a class="btn wa" href="https://wa.me/?text=Carretera%20de%20Caldes%20i%20pont%20de%20la%20Salut%3A%20https%3A%2F%2Fpontdelasalut.github.io%2F" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+          <button type="button" class="btn ghost" data-copy data-copied="Enlace copiado">Copiar el enlace</button>
+          <span class="url">pontdelasalut.github.io</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="panel about">
+        <h2>Quiénes somos</h2>
+        <p>Iniciativa informativa de vecinos. No es una web oficial del Ayuntamiento ni de ninguna entidad registrada. Los enlaces llevan a webs externas y el contenido de cada noticia es responsabilidad del medio que la publica.</p>
+      </div>
+    </section>
+  </div>
 </main>
 
 <footer>
-  <div data-lang="ca">Informació basada en notícies publicades. Els enllaços porten a cada mitjà. Última actualització: 3 de novembre de 2026.</div>
-  <div data-lang="es" class="hidden">Información basada en noticias publicadas. Los enlaces llevan a cada medio. Última actualización: 3 de noviembre de 2026.</div>
+  <div data-lang="ca">Última actualització: 3 de novembre de 2026.</div>
+  <div data-lang="es" class="hidden">Última actualización: 3 de noviembre de 2026.</div>
 </footer>
 
 <script>
-  (function () {
-    var buttons = document.querySelectorAll('[data-set-lang]');
-    function show(lang) {
-      document.documentElement.lang = lang === 'es' ? 'es' : 'ca';
-      document.querySelectorAll('[data-lang]').forEach(function (el) {
-        el.classList.toggle('hidden', el.getAttribute('data-lang') !== lang);
-      });
-      buttons.forEach(function (b) {
-        b.setAttribute('aria-pressed', String(b.getAttribute('data-set-lang') === lang));
-      });
-    }
-    buttons.forEach(function (b) {
-      b.addEventListener('click', function () {
-        var lang = b.getAttribute('data-set-lang');
-        show(lang);
-        try { localStorage.setItem('portal-lang', lang); } catch (e) {}
-      });
+(function () {
+  var T = { ca: "Carretera de Caldes i pont de la Salut", es: "Carretera de Caldes y puente de la Salud" };
+  var buttons = document.querySelectorAll("[data-set-lang]");
+  function show(lang, updateHash) {
+    document.documentElement.lang = lang;
+    document.title = T[lang];
+    document.querySelectorAll("[data-lang]").forEach(function (el) {
+      el.classList.toggle("hidden", el.getAttribute("data-lang") !== lang);
     });
-    var saved = null;
-    try { saved = localStorage.getItem('portal-lang'); } catch (e) {}
-    show(saved === 'es' ? 'es' : 'ca');
-  })();
+    buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-set-lang") === lang)); });
+    if (updateHash) { try { history.replaceState(null, "", "#" + lang); } catch (e) {} }
+  }
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var lang = b.getAttribute("data-set-lang");
+      show(lang, true);
+      try { localStorage.setItem("portal-lang", lang); } catch (e) {}
+    });
+  });
+  document.querySelectorAll("[data-copy]").forEach(function (b) {
+    var original = b.textContent;
+    b.addEventListener("click", function () {
+      var url = "https://pontdelasalut.github.io/";
+      var done = function () { b.textContent = b.getAttribute("data-copied"); setTimeout(function () { b.textContent = original; }, 2000); };
+      if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(url).then(done, function () {}); }
+    });
+  });
+  var h = (location.hash || "").replace("#", "");
+  var saved = null; try { saved = localStorage.getItem("portal-lang"); } catch (e) {}
+  var nav = (navigator.language || "").toLowerCase();
+  var lang = (h === "es" || h === "ca") ? h : (saved === "es" || saved === "ca") ? saved : (nav.indexOf("es") === 0 ? "es" : "ca");
+  show(lang, false);
+  window.addEventListener("hashchange", function () { var x = location.hash.replace("#", ""); if (x === "es" || x === "ca") show(x, false); });
+})();
 </script>
 </body>
 </html>
