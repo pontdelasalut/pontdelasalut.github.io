@@ -89,6 +89,18 @@
   .pfig figcaption { margin-top:10px; }
   .pfig .btn { margin-top:0; }
   .qrs { display:grid; gap:14px; grid-template-columns:1fr; max-width:340px; margin:0 auto; }
+  .maplink { margin:14px 0 0; }
+  .demands { list-style:none; counter-reset:d; padding:0; margin:0; display:grid; gap:12px; }
+  .demands li { counter-increment:d; background:var(--card); border:1px solid var(--line); border-left:6px solid #a3363a; border-radius:12px; padding:14px 16px 14px 58px; position:relative; }
+  .demands li::before { content:counter(d); position:absolute; left:16px; top:12px; width:30px; height:30px; border-radius:50%; background:#a3363a; color:#fff; font-weight:800; display:flex; align-items:center; justify-content:center; }
+  .demands strong { display:block; font-size:1.05rem; }
+  .demands span { color:var(--muted); }
+  .more { color:var(--muted); font-size:.9rem; margin:10px 0 0; }
+  .timeline { list-style:none; margin:0; padding:0 0 0 22px; border-left:3px solid #f6c304; display:grid; gap:14px; }
+  .timeline li { position:relative; }
+  .timeline li::before { content:""; position:absolute; left:-31px; top:4px; width:15px; height:15px; border-radius:50%; background:#f6c304; border:3px solid #1d2a38; }
+  .timeline time { display:block; font-weight:800; color:#a3363a; font-size:.92rem; }
+  .timeline p { margin:2px 0 0; }
 </style>
 </head>
 <body>
@@ -113,8 +125,8 @@
     <div class="poster">
       <div class="poster-in">
         <div class="pq" aria-hidden="true">”</div>
-        <p class="pt">¡VOLEM UN BARRI DIGNE!</p>
-        <p class="ps">EL PONT DE LA SALUT ES SABADELL;<br>NOSALTRES SOM SABADELL</p>
+        <p class="pt">VOLEM UN BARRI DIGNE!</p>
+        <p class="ps">EL PONT DE LA SALUT ÉS SABADELL;<br>NOSALTRES SOM SABADELL</p>
         <div class="pd" aria-hidden="true"><span></span>✦<span></span></div>
         <ul class="pb"><li>RAVAL D’AMÀLIA</li><li>PUJADA DE LA SALUT</li><li>MOLÍ D’EN TORRELLA</li><li>CASES D’EN SANGES</li></ul>
       </div>
@@ -129,7 +141,31 @@
         <h2>Què passa</h2>
         <p>Veïns del Raval d'Amàlia, la Pujada de la Salut, el Molí d'en Torrella i les Cases d'en Sanges, a l'entorn del Pont de la Salut i la carretera de Caldes, reclamen voreres segures, transport públic i millor accessibilitat. Aquí recollim les notícies publicades i les posicions de cada part.</p>
         <div class="barris"><span class="barris-l">Barris:</span><span class="chip">Raval d'Amàlia</span><span class="chip">Pujada de la Salut</span><span class="chip">Molí d'en Torrella</span><span class="chip">Cases d'en Sanges</span></div>
+        <p class="maplink"><a class="btn ghost" href="https://www.openstreetmap.org/search?query=Pont%20de%20la%20Salut%2C%20Sabadell" target="_blank" rel="noopener">Veure la zona al mapa ↗</a></p>
       </div>
+    </section>
+
+    <section>
+      <h2>Què demanem</h2>
+      <ol class="demands">
+        <li><strong>Transport públic als barris</strong><span>Que una línia regular d'autobús arribi al Raval d'Amàlia, la Pujada de la Salut, el Molí d'en Torrella i les Cases d'en Sanges.</span></li>
+        <li><strong>Voreres</strong><span>Voreres segures i accessibles per poder caminar sense haver d’anar per la calçada, també amb cadira de rodes, cotxet o quan plou.</span></li>
+      </ol>
+      <p class="more">Anirem afegint més peticions.</p>
+    </section>
+
+    <section>
+      <h2>Cronologia</h2>
+      <ol class="timeline">
+        <li><time>15/09/2023</time><p>El Diari de Sabadell publica queixes de veïns del Molí d’en Torrella.</p></li>
+        <li><time>25/03/2025</time><p>El ple municipal aprova per unanimitat una moció per elaborar en 12 mesos un pla per dignificar l’entorn de la carretera de Caldes. La carretera és de la Generalitat.</p></li>
+        <li><time>Principis del 2026</time><p>Segons els veïns, la regidora del districte els presenta una primera fase de millores (voreres, aparcaments i una petita rotonda) amb obres previstes per a finals d’any.</p></li>
+        <li><time>22/10/2026</time><p>Els veïns denuncien a les xarxes que les obres encara no han començat.</p></li>
+        <li><time>01/11/2026</time><p>Veïns tallen el trànsit a la carretera de Caldes durant una hora per reclamar voreres i autobús.</p></li>
+        <li><time>02/11/2026</time><p>L’Ajuntament afirma que el projecte és gairebé acabat, amb 700.000 € previstos al pressupost, i avisa que l’execució es podria endarrerir fins al 2027.</p></li>
+        <li><time>03/11/2026</time><p>L’Informatiu de TV Sabadell-Vallès en parla.</p></li>
+      </ol>
+      <p class="more">Fets segons les notícies i les publicacions enllaçades en aquesta pàgina.</p>
     </section>
 
     <section>
@@ -218,8 +254,8 @@
       <h2>Cartells</h2>
       <p class="lead">Cartells dels veïns per compartir o imprimir.</p>
       <div class="posters">
-        <figure class="pfig"><img src="cartell-horitzontal.png" alt="Cartell: ¡Volem un barri digne! El Pont de la Salut es Sabadell; nosaltres som Sabadell. Raval d’Amàlia, Pujada de la Salut, Molí d’en Torrella, Cases d’en Sanges." width="2048" height="1024" loading="lazy"><figcaption><a class="btn ghost" href="cartell-horitzontal.png" download>Descarregar (horitzontal)</a></figcaption></figure>
-        <figure class="pfig"><img src="cartell-vertical.png" alt="Cartell: ¡Volem un barri digne! El Pont de la Salut es Sabadell; nosaltres som Sabadell. Raval d’Amàlia, Pujada de la Salut, Molí d’en Torrella, Cases d’en Sanges." width="1080" height="1350" loading="lazy"><figcaption><a class="btn ghost" href="cartell-vertical.png" download>Descarregar (vertical)</a></figcaption></figure>
+        <figure class="pfig"><img src="cartell-horitzontal.png" alt="Cartell: Volem un barri digne! El Pont de la Salut és Sabadell; nosaltres som Sabadell. Raval d’Amàlia, Pujada de la Salut, Molí d’en Torrella, Cases d’en Sanges." width="2048" height="1024" loading="lazy"><figcaption><a class="btn ghost" href="cartell-horitzontal.png" download>Descarregar (horitzontal)</a></figcaption></figure>
+        <figure class="pfig"><img src="cartell-vertical.png" alt="Cartell: Volem un barri digne! El Pont de la Salut és Sabadell; nosaltres som Sabadell. Raval d’Amàlia, Pujada de la Salut, Molí d’en Torrella, Cases d’en Sanges." width="1080" height="1350" loading="lazy"><figcaption><a class="btn ghost" href="cartell-vertical.png" download>Descarregar (vertical)</a></figcaption></figure>
       </div>
     </section>
 
@@ -256,7 +292,31 @@
         <h2>Qué pasa</h2>
         <p>Vecinos del Raval d'Amàlia, la Pujada de la Salut, el Molí d'en Torrella y las Cases d'en Sanges, en el entorno del Pont de la Salut y la carretera de Caldes, reclaman aceras seguras, transporte público y mejor accesibilidad. Aquí recogemos las noticias publicadas y las posiciones de cada parte.</p>
         <div class="barris"><span class="barris-l">Barrios:</span><span class="chip">Raval d'Amàlia</span><span class="chip">Pujada de la Salut</span><span class="chip">Molí d'en Torrella</span><span class="chip">Cases d'en Sanges</span></div>
+        <p class="maplink"><a class="btn ghost" href="https://www.openstreetmap.org/search?query=Pont%20de%20la%20Salut%2C%20Sabadell" target="_blank" rel="noopener">Ver la zona en el mapa ↗</a></p>
       </div>
+    </section>
+
+    <section>
+      <h2>Qué pedimos</h2>
+      <ol class="demands">
+        <li><strong>Transporte público en los barrios</strong><span>Que una línea regular de autobús llegue al Raval d'Amàlia, la Pujada de la Salut, el Molí d'en Torrella y las Cases d'en Sanges.</span></li>
+        <li><strong>Aceras</strong><span>Aceras seguras y accesibles para poder caminar sin tener que ir por la calzada, también en silla de ruedas, con carrito o cuando llueve.</span></li>
+      </ol>
+      <p class="more">Iremos añadiendo más peticiones.</p>
+    </section>
+
+    <section>
+      <h2>Cronología</h2>
+      <ol class="timeline">
+        <li><time>15/09/2023</time><p>El Diari de Sabadell publica quejas de vecinos del Molí d’en Torrella.</p></li>
+        <li><time>25/03/2025</time><p>El pleno municipal aprueba por unanimidad una moción para elaborar en 12 meses un plan para dignificar el entorno de la carretera de Caldes. La carretera es de la Generalitat.</p></li>
+        <li><time>Principios de 2026</time><p>Según los vecinos, la regidora del distrito les presenta una primera fase de mejoras (aceras, aparcamientos y una pequeña rotonda) con obras previstas para finales de año.</p></li>
+        <li><time>22/10/2026</time><p>Los vecinos denuncian en redes que las obras aún no han empezado.</p></li>
+        <li><time>01/11/2026</time><p>Vecinos cortan el tráfico en la carretera de Caldes durante una hora para reclamar aceras y autobús.</p></li>
+        <li><time>02/11/2026</time><p>El Ayuntamiento afirma que el proyecto está casi terminado, con 700.000 € previstos en el presupuesto, y advierte de que la ejecución podría retrasarse hasta 2027.</p></li>
+        <li><time>03/11/2026</time><p>El informativo de TV Sabadell-Vallès habla del tema.</p></li>
+      </ol>
+      <p class="more">Hechos según las noticias y publicaciones enlazadas en esta página.</p>
     </section>
 
     <section>
@@ -345,8 +405,8 @@
       <h2>Carteles</h2>
       <p class="lead">Carteles de los vecinos para compartir o imprimir.</p>
       <div class="posters">
-        <figure class="pfig"><img src="cartell-horitzontal.png" alt="Cartell: ¡Volem un barri digne! El Pont de la Salut es Sabadell; nosaltres som Sabadell. Raval d’Amàlia, Pujada de la Salut, Molí d’en Torrella, Cases d’en Sanges." width="2048" height="1024" loading="lazy"><figcaption><a class="btn ghost" href="cartell-horitzontal.png" download>Descargar (horizontal)</a></figcaption></figure>
-        <figure class="pfig"><img src="cartell-vertical.png" alt="Cartell: ¡Volem un barri digne! El Pont de la Salut es Sabadell; nosaltres som Sabadell. Raval d’Amàlia, Pujada de la Salut, Molí d’en Torrella, Cases d’en Sanges." width="1080" height="1350" loading="lazy"><figcaption><a class="btn ghost" href="cartell-vertical.png" download>Descargar (vertical)</a></figcaption></figure>
+        <figure class="pfig"><img src="cartell-horitzontal.png" alt="Cartell: Volem un barri digne! El Pont de la Salut és Sabadell; nosaltres som Sabadell. Raval d’Amàlia, Pujada de la Salut, Molí d’en Torrella, Cases d’en Sanges." width="2048" height="1024" loading="lazy"><figcaption><a class="btn ghost" href="cartell-horitzontal.png" download>Descargar (horizontal)</a></figcaption></figure>
+        <figure class="pfig"><img src="cartell-vertical.png" alt="Cartell: Volem un barri digne! El Pont de la Salut és Sabadell; nosaltres som Sabadell. Raval d’Amàlia, Pujada de la Salut, Molí d’en Torrella, Cases d’en Sanges." width="1080" height="1350" loading="lazy"><figcaption><a class="btn ghost" href="cartell-vertical.png" download>Descargar (vertical)</a></figcaption></figure>
       </div>
     </section>
 
