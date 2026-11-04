@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proves fotogràfiques · Pont de la Salut</title>
+<meta name="description" content="Fotos fetes pels veïns del Raval d'Amàlia, Pujada de la Salut, Molí d'en Torrella i Cases d'en Sanges.">
+<meta property="og:title" content="Proves fotogràfiques · Pont de la Salut">
+<meta property="og:description" content="Fotos fetes pels veïns, ordenades per queixa.">
+<meta property="og:image" content="https://pontdelasalut.github.io/og.png">
+<meta property="og:url" content="https://pontdelasalut.github.io/proves.html">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root { --navy:#1d2a38; --red:#a3363a; --yellow:#f6c304; --bg:#f4f1ea; --card:#fff; --line:#e2ddd2; --muted:#5d6670; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:#1b1f24; line-height:1.5; }
+  header { background:var(--navy); color:#fff; padding:14px 18px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; border-bottom:5px solid var(--yellow); }
+  header a.back { color:#fff; text-decoration:none; font-weight:700; }
+  header a.back:hover { color:var(--yellow); }
+  .lang button { background:transparent; color:#fff; border:1px solid #fff6; border-radius:999px; padding:4px 12px; font-weight:700; cursor:pointer; }
+  .lang button.on { background:var(--yellow); color:var(--navy); border-color:var(--yellow); }
+  main { max-width:1100px; margin:0 auto; padding:22px 16px 40px; }
+  h1 { margin:.2em 0 .3em; color:var(--navy); font-size:clamp(1.6rem,4vw,2.3rem); }
+  .lead { color:var(--muted); margin:0 0 24px; max-width:60ch; }
+  section.cat { margin:0 0 32px; scroll-margin-top:12px; }
+  section.cat h2 { margin:0 0 12px; font-size:1.25rem; color:#fff; background:var(--red); display:inline-block; padding:4px 14px; border-radius:6px; }
+  .grid { display:grid; gap:10px; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); }
+  .grid a { display:block; border-radius:10px; overflow:hidden; border:1px solid var(--line); background:var(--card); }
+  .grid img { width:100%; aspect-ratio:4/3; object-fit:cover; display:block; transition:transform .2s; }
+  .grid a:hover img { transform:scale(1.03); }
+  footer { text-align:center; color:var(--muted); font-size:.9rem; padding:20px 16px 30px; }
+  footer a { color:var(--red); }
+  .hidden { display:none !important; }
+</style>
+</head>
+<body>
+<header>
+  <a class="back" href="index.html"><span data-lang="ca">← Tornar al portal</span><span data-lang="es" class="hidden">← Volver al portal</span></a>
+  <div class="lang"><button data-set-lang="ca">Català</button> <button data-set-lang="es">Castellano</button></div>
+</header>
+
+<main>
+  <div data-lang="ca">
+    <h1>Proves fotogràfiques</h1>
+    <p class="lead">Fotos fetes pels veïns, ordenades per queixa. Toca una foto per veure-la gran.</p>
+  </div>
+  <div data-lang="es" class="hidden">
+    <h1>Pruebas fotográficas</h1>
+    <p class="lead">Fotos hechas por los vecinos, ordenadas por queja. Toca una foto para verla en grande.</p>
+  </div>
+
+  <!-- Per afegir proves d'una altra queixa, copia aquesta secció i canvia l'id:
+       carrers-voreres, seguretat-viaria, transport, neteja, mobiliari, integracio -->
+  <section class="cat" id="abocaments">
+    <h2><span data-lang="ca">Abocaments il·legals</span><span data-lang="es" class="hidden">Vertidos ilegales</span></h2>
+    <div class="grid">
+      <a href="fotos/abocament-vegetacio-1.jpg" target="_blank" rel="noopener"><img src="fotos/abocament-vegetacio-1.jpg" alt="Abocament / vertido" loading="lazy"></a>
+      <a href="fotos/abocament-vegetacio-2.jpg" target="_blank" rel="noopener"><img src="fotos/abocament-vegetacio-2.jpg" alt="Abocament / vertido" loading="lazy"></a>
+      <a href="fotos/runa-vorera.jpg" target="_blank" rel="noopener"><img src="fotos/runa-vorera.jpg" alt="Abocament / vertido" loading="lazy"></a>
+      <a href="fotos/pneumatics-contenidors.jpg" target="_blank" rel="noopener"><img src="fotos/pneumatics-contenidors.jpg" alt="Abocament / vertido" loading="lazy"></a>
+      <a href="fotos/tub-contenidors.jpg" target="_blank" rel="noopener"><img src="fotos/tub-contenidors.jpg" alt="Abocament / vertido" loading="lazy"></a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span data-lang="ca">Iniciativa informativa veïnal, sense caràcter oficial.</span><span data-lang="es" class="hidden">Iniciativa informativa vecinal, sin carácter oficial.</span>
+  · <a href="index.html">pontdelasalut.github.io</a>
+</footer>
+
+<script>
+(function () {
+  var T = { ca: "Proves fotogràfiques · Pont de la Salut", es: "Pruebas fotográficas · Pont de la Salut" };
+  function setLang(l) {
+    document.querySelectorAll("[data-lang]").forEach(function (el) { el.classList.toggle("hidden", el.getAttribute("data-lang") !== l); });
+    document.querySelectorAll("[data-set-lang]").forEach(function (b) { b.classList.toggle("on", b.getAttribute("data-set-lang") === l); });
+    document.documentElement.lang = l; document.title = T[l];
+    try { localStorage.setItem("portal-lang", l); } catch (e) {}
+  }
+  var l = null;
+  try { l = localStorage.getItem("portal-lang"); } catch (e) {}
+  if (l !== "ca" && l !== "es") l = /^es/i.test(navigator.language || "") ? "es" : "ca";
+  document.querySelectorAll("[data-set-lang]").forEach(function (b) { b.addEventListener("click", function () { setLang(b.getAttribute("data-set-lang")); }); });
+  setLang(l);
+})();
+</script>
+<script data-goatcounter="https://pontdelasalut.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
