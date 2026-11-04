@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Proves fotogràfiques · Pont de la Salut</title>
+<title>Imatges · Pont de la Salut</title>
 <meta name="description" content="Fotos fetes pels veïns del Raval d'Amàlia, Pujada de la Salut, Molí d'en Torrella i Cases d'en Sanges.">
-<meta property="og:title" content="Proves fotogràfiques · Pont de la Salut">
-<meta property="og:description" content="Fotos fetes pels veïns, ordenades per queixa.">
+<meta property="og:title" content="Imatges · Pont de la Salut">
+<meta property="og:description" content="Fotos fetes pels veïns, ordenades per tema.">
 <meta property="og:image" content="https://pontdelasalut.github.io/og.png">
-<meta property="og:url" content="https://pontdelasalut.github.io/proves.html">
+<meta property="og:url" content="https://pontdelasalut.github.io/imatges.html">
 <meta name="twitter:card" content="summary_large_image">
 <style>
   :root { --navy:#1d2a38; --red:#a3363a; --yellow:#f6c304; --bg:#f4f1ea; --card:#fff; --line:#e2ddd2; --muted:#5d6670; }
@@ -41,15 +41,15 @@
 
 <main>
   <div data-lang="ca">
-    <h1>Proves fotogràfiques</h1>
-    <p class="lead">Fotos fetes pels veïns, ordenades per queixa. Toca una foto per veure-la gran.</p>
+    <h1>Imatges</h1>
+    <p class="lead">Fotos fetes pels veïns, ordenades per tema. Toca una foto per veure-la gran.</p>
   </div>
   <div data-lang="es" class="hidden">
-    <h1>Pruebas fotográficas</h1>
-    <p class="lead">Fotos hechas por los vecinos, ordenadas por queja. Toca una foto para verla en grande.</p>
+    <h1>Imágenes</h1>
+    <p class="lead">Fotos hechas por los vecinos, ordenadas por tema. Toca una foto para verla en grande.</p>
   </div>
 
-  <!-- Per afegir proves d'una altra queixa, copia aquesta secció i canvia l'id:
+  <!-- Per afegir imatges d'un altre tema, copia aquesta secció i canvia l'id:
        carrers-voreres, seguretat-viaria, transport, neteja, mobiliari, integracio -->
   <section class="cat" id="abocaments">
     <h2><span data-lang="ca">Abocaments il·legals</span><span data-lang="es" class="hidden">Vertidos ilegales</span></h2>
@@ -70,7 +70,7 @@
 
 <script>
 (function () {
-  var T = { ca: "Proves fotogràfiques · Pont de la Salut", es: "Pruebas fotográficas · Pont de la Salut" };
+  var T = { ca: "Imatges · Pont de la Salut", es: "Imágenes · Pont de la Salut" };
   function setLang(l) {
     document.querySelectorAll("[data-lang]").forEach(function (el) { el.classList.toggle("hidden", el.getAttribute("data-lang") !== l); });
     document.querySelectorAll("[data-set-lang]").forEach(function (b) { b.classList.toggle("on", b.getAttribute("data-set-lang") === l); });
