@@ -28,6 +28,8 @@
   .grid a { display:block; border-radius:10px; overflow:hidden; border:1px solid var(--line); background:var(--card); }
   .grid img { width:100%; aspect-ratio:4/3; object-fit:cover; display:block; transition:transform .2s; }
   .grid a:hover img { transform:scale(1.03); }
+  h3.lloc { margin:6px 0 10px; font-size:1.02rem; color:var(--navy); }
+  h3.lloc + .grid { margin-bottom:20px; }
   footer { text-align:center; color:var(--muted); font-size:.9rem; padding:20px 16px 30px; }
   footer a { color:var(--red); }
   .hidden { display:none !important; }
@@ -49,10 +51,12 @@
     <p class="lead">Fotos hechas por los vecinos, ordenadas por tema. Toca una foto para verla en grande.</p>
   </div>
 
-  <!-- Per afegir imatges d'un altre tema, copia aquesta secció i canvia l'id:
+  <!-- Dins de cada tema, un bloc h3.lloc + .grid per lloc (fotos de diferents veïns del mateix lloc, juntes).
+       Per afegir imatges d'un altre tema, copia aquesta secció i canvia l'id:
        carrers-voreres, seguretat-viaria, transport, neteja, mobiliari, integracio -->
   <section class="cat" id="abocaments">
     <h2><span data-lang="ca">Abocaments il·legals</span><span data-lang="es" class="hidden">Vertidos ilegales</span></h2>
+    <h3 class="lloc"><span data-lang="ca">📍 Contenidors a l'inici de Ca la Daniela</span><span data-lang="es" class="hidden">📍 Contenedores al inicio de Ca la Daniela</span></h3>
     <div class="grid">
       <a href="fotos/abocament-vegetacio-1.jpg" target="_blank" rel="noopener"><img src="fotos/abocament-vegetacio-1.jpg" alt="Abocament / vertido" loading="lazy"></a>
       <a href="fotos/abocament-vegetacio-2.jpg" target="_blank" rel="noopener"><img src="fotos/abocament-vegetacio-2.jpg" alt="Abocament / vertido" loading="lazy"></a>
